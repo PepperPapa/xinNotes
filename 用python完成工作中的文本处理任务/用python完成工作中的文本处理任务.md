@@ -120,3 +120,5 @@ dst_file = open("dts.xml", 'w')
 dst_file.write(dst_content)
 dst_file.close()
 ```
+## 总结
+把学到的编程知识用于解决实际的问题，做到学以致用，这样带着目的去学习才是最高效的，也会持续得到正反馈，学习的热情才能持续。本书中的代码也可以通过我的[github]()去下载。

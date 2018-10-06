@@ -24,7 +24,7 @@ def print_list(lst, indent = 0):
 ![导入模块测试](交互模式测试导入模块.png)
 
 # 发布模块
-上一节我们已经创建并测试了我们的模块，但是如果我们要共享模块，还需要一些额外的文件，这些文件集合在一起允许你构建、打包和发布你自己的模块
+上一节我们已经创建并测试了我们的模块，但是如果我们要共享模块，还需要一些额外文件集合在一起允许你构建、打包和发布你自己的模块
 #### 1. 构建前的准备
 构建模块前我们需要创建类似如下的文件目录结构，example_pkg目录下创建文件LICENSE,README.md,setup.py三个文件，子目录example_pkg_zx1下创建\_\_init\_\_.py（注意是两个下划线）,拷贝上一节创建的nestList.py到此目录下，我们逐个说明下其余各个文件的内容。  
 ![发布模块目录](构建前文件目录.png)
@@ -52,10 +52,10 @@ setuptools.setup(
     ],
 )
 ```
-> name，version，author，author_email，description，url根据名称的含义参考你的模块功能进行填写即可，没有特别要注意的地方。（注：name参数在上传到internet上要求必须是唯一的，不能有重复，否则无法上传）   
-> long_description为读取README.md的内容，encoding="utf-8"设置是为了README.md的内容支持中文，long_description_content_type执定long_description内容格式为markdown。   
-> packages通过setuptools.find_packages()函数会查找目录example_pkg_zx1下所有需要包含的模块，避免手工输入的麻烦。  
-> classifiers提供一些额外的模块信息，是一个列表格式。  
+> * name，version，author，author_email，description，url根据名称的含义参考你的模块功能进行填写即可，没有特别要注意的地方。（注：name参数在上传到internet上要求必须是唯一的，不能有重复，否则无法上传）   
+> * long_description为读取README.md的内容，encoding="utf-8"设置是为了README.md的内容支持中文，long_description_content_type执定long_description内容格式为markdown。   
+> * packages通过setuptools.find_packages()函数会查找目录example_pkg_zx1下所有需要包含的模块，避免手工输入的麻烦。  
+> * classifiers提供一些额外的模块信息，是一个列表格式。  
 * LICENSE是规定了你使用哪种协议发布自己的模块，如下MIT license的内容。如果你只是学习如何发布，直接copy如下内容即可，不用特别关注。
 ```
 Copyright (c) 2018 The Python Packaging Authority
@@ -134,4 +134,4 @@ name = "example_pkg_zx1"
 ![测试从Test PyPI安装的模块](验证已安装模块.png)
 
 # 最后的提示
-如果你已经准备好了正式发布自己的模块到PyPI（**与Test PyPI不同哦**），你需要首先在[https://pypi.org](https://pypi.org)上注册正式的账户并验证邮箱，twine上传命令直接使用"twine upload dist/*"命令即可，不用再指定url；同样从PyPI安装模块直接使用命令"pip install your-package-name"进行安装，也不用执行url。
+如果你已经准备好了正式发布自己的模块到PyPI（**与Test PyPI不同哦**），你需要首先在[https://pypi.org](https://pypi.org)上注册正式的账户并验证邮箱，twine上传命令直接使用"twine upload dist/*"命令即可，不用再指定url；同样从PyPI安装模块直接使用命令"pip install your-package-name"进行安装，也不用指定url。
